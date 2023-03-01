@@ -1,0 +1,26 @@
+#include<iostream>
+
+//find the most frequently shown symbol
+
+int main()
+{
+	std::string txt;
+	std::cin >> txt;
+
+	int cntans = 0;
+	char ans = ' ';
+
+	for (int i = 0; i < txt.length(); i++)
+	{
+		int nowcnt = 0;
+		for (int j = 0; j < txt.length(); j++)
+		{
+			if (txt[i] == txt[j])
+				nowcnt += 1;
+		}
+		if (nowcnt > cntans)
+			ans = txt[i];
+		cntans = nowcnt;
+	}
+	std::cout << ans;
+}
